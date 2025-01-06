@@ -17,6 +17,7 @@ public class RecruitmentPage extends BasePage {
         super(driver);
     }
 
+    //todo  << Locators >>
     By Add_button = By.xpath("//button[contains(.,'Add')]");
     By Search_button = By.xpath("//button[contains(.,' Search ')]");
     By save_button = By.xpath("//button[contains(.,'Save')]");
@@ -39,9 +40,7 @@ public class RecruitmentPage extends BasePage {
     By Vacancies_tab =By.xpath("//a[contains(.,'Vacancies')]");
     By chiefExecutiveOfficer = By.xpath("//*[contains(text(), 'Chief Executive Officer')]");
     By HiringManager = By.xpath("//div[@class=\"oxd-input-group oxd-input-field-bottom-space\" and contains(.,'Hiring Manager')] //input");
-    By HiringManager_select = By.xpath("//div[@class=\"oxd-input-group oxd-input-field-bottom-space\" and contains(.,'Hiring Manager')] //div[@class=\"oxd-select-text oxd-select-text--active\"]");
     By HiringManager_Value =By.xpath("//div[@class=\"oxd-input-group oxd-input-field-bottom-space\" and contains(.,'Hiring Manager') ] //*[contains(text(), 'Charles  Carter')]");
-    By HiringManagerSelectValue = By.xpath("//div[@role= 'listbox'] //*[contains(text(),'Charles  Carter' )]");
     By Active_value = By.xpath("//*[contains(text(), 'Active')]");
     By Closed_value =By.xpath("//*[contains(text(), 'Closed')]");
     By Candidates_tab = By.xpath("//a[contains(.,'Candidates')]");
@@ -65,6 +64,7 @@ public class RecruitmentPage extends BasePage {
     By InterviewFailed_Status =By.xpath("//p[contains(.,'Status: Interview Failed')]");
     By Hired_Status =By.xpath("//p[contains(.,'Status: Hired')]");
     By close_value =By.xpath("//div[@class=\"oxd-table-cell oxd-padding-cell\"][5] //div[contains(.,'Closed')]");
+
     private static String Firstname;
     private static String NameofCandidate;
 
@@ -74,7 +74,7 @@ public class RecruitmentPage extends BasePage {
     }
 
 
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
     public RecruitmentPage clickOnEyeICON()
     {
         driver.findElement(eye_icon).click();

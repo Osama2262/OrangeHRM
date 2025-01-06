@@ -19,8 +19,8 @@ public class PIM_Page extends BasePage {
 
     public static String StorageUsername;
 
-    //todo  << Locators >>
 
+    //todo  << Locators >>
     By Add_employeeTab = By.xpath("//nav[@aria-label=\"Topbar Menu\"] //*[contains(text(),'Add Employee') ]");
     By employeeList = By.xpath("//nav[@aria-label=\"Topbar Menu\"] //*[contains(text(),'Employee List') ]");
     By save_button = By.xpath("//button[contains(.,'Save')]");
@@ -65,7 +65,7 @@ public class PIM_Page extends BasePage {
     }
 
     public PIM_Page FillEmployeeInfo() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         String Firstname = DataFaker.getFirstName();
         driver.findElement(firstName).sendKeys(Firstname);
         Thread.sleep(500);

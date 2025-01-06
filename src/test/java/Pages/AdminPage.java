@@ -67,7 +67,7 @@ public class AdminPage extends BasePage {
 
 
 
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
     public AdminPage gotoLocation_tab()
     {
         driver.findElement(organization_tab).click();
