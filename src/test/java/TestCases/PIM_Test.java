@@ -7,8 +7,6 @@ import Pages.LoginPage;
 import Pages.PIM_Page;
 import org.testng.annotations.Test;
 
-import java.awt.*;
-
 public class PIM_Test extends BaseTest {
 
     @Test(priority = 9)

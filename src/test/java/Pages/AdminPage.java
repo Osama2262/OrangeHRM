@@ -16,7 +16,8 @@ public class AdminPage extends BasePage {
     public AdminPage(WebDriver driver) {
         super(driver);
     }
-    By admin_page = By.xpath("//a[contains(.,'Admin')]");
+
+    //todo  << Locators >>
     By username = By.xpath("//div[@class=\"oxd-form-row\"] //input[@class=\"oxd-input oxd-input--active\"]");
     By userRole =By.xpath("//div[@class=\"oxd-input-group oxd-input-field-bottom-space\" and contains(.,'User Role') ] //div[@class=\"oxd-select-wrapper\"] ");
     By EmployeeName = By.xpath("//input[@placeholder='Type for hints...']");
@@ -50,6 +51,7 @@ public class AdminPage extends BasePage {
     By LocationField =By.xpath("//div[@class=\"oxd-input-group oxd-input-field-bottom-space\"and contains(.,'Name') ] //input");
     By NumberOfEmployees = By.xpath("//div[@class=\"oxd-table-cell oxd-padding-cell\"][6]");
     By employeeNameValue =By.xpath("//*[contains(text(), 'Charles  Carter')]");
+
     public static String usernameStorage;
     public static String jobTitleStorage;
     public static String LocationStorage;

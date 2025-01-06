@@ -12,9 +12,15 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class PIM_Page extends BasePage {
+
     public PIM_Page(WebDriver driver) {
         super(driver);
     }
+
+    public static String StorageUsername;
+
+    //todo  << Locators >>
+
     By Add_employeeTab = By.xpath("//nav[@aria-label=\"Topbar Menu\"] //*[contains(text(),'Add Employee') ]");
     By employeeList = By.xpath("//nav[@aria-label=\"Topbar Menu\"] //*[contains(text(),'Employee List') ]");
     By save_button = By.xpath("//button[contains(.,'Save')]");
@@ -41,12 +47,11 @@ public class PIM_Page extends BasePage {
     By new_York_Sales_Office = By.xpath("//*[contains(text(), 'New York Sales Office')]");
     By jobTitleAfterChange =By.xpath("//div[@class=\"oxd-table-row oxd-table-row--with-border oxd-table-row--clickable\"] //*[contains(text(),'Automaton Tester')]");
 
-    public static String StorageUsername;
+
     //todo:Dynamic xpath
     By dynamicLocation = By.xpath("//*[contains(text(), '"+
            AdminPage.LocationStorage +
            "')]") ;
-
 
 
     public PIM_Page goToEmployeeList_tab()
@@ -76,25 +81,12 @@ public class PIM_Page extends BasePage {
         return this;
     }
 
-    public void VerifyThatUserAreCreated()
-    {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(Edit_Layout)));
-        boolean isVisible = driver.findElement(Edit_Layout).isDisplayed();
-        Assert.assertTrue(isVisible);
-    }
-
     public PIM_Page SearchForEmployee() throws InterruptedException {
         driver.findElement(employeeName).sendKeys(StorageUsername);
         Thread.sleep(2000);
         driver.findElement(search_button).click();
         return this;
     }
-    public void verifySearchingForEmployee()
-    {
-        Assert.assertTrue(driver.findElement(recordFound).isDisplayed());
-    }
-
 
     public PIM_Page AssignEmployeeToJob() throws InterruptedException {
 
@@ -123,11 +115,7 @@ public class PIM_Page extends BasePage {
         driver.findElement(save_button).click();
         return this;
     }
-    public void verifyAssigningEmployeeToJob() throws InterruptedException {
-        Thread.sleep(2000);
-       boolean isDisplayed = driver.findElement(jobTitleAfterChange).isDisplayed();
-       Assert.assertTrue(isDisplayed);
-    }
+
     public void ChangeLocationValue() throws InterruptedException {
         driver.findElement(Edit_button).click();
         driver.findElement(jobSidBar).click();
@@ -140,4 +128,21 @@ public class PIM_Page extends BasePage {
 
 
 
+    //todo << Assertion >>
+    public void VerifyThatUserAreCreated()
+    {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(Edit_Layout)));
+        boolean isVisible = driver.findElement(Edit_Layout).isDisplayed();
+        Assert.assertTrue(isVisible);
+    }
+    public void verifyAssigningEmployeeToJob() throws InterruptedException {
+        Thread.sleep(2000);
+        boolean isDisplayed = driver.findElement(jobTitleAfterChange).isDisplayed();
+        Assert.assertTrue(isDisplayed);
+    }
+    public void verifySearchingForEmployee()
+    {
+        Assert.assertTrue(driver.findElement(recordFound).isDisplayed());
+    }
 }
