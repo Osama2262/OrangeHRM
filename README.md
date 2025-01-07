@@ -153,7 +153,7 @@ Feel free to fork this repository, contribute with issues or pull requests. Any 
 If you have any questions or would like to discuss this project further, feel free to reach out:
 
 - GitHub: [@Osama2262](https://github.com/Osama2262)
-- Email: [your-email@example.com](mailto:your-email@example.com)
+- Email: [kandel.2262@gmail.com](kandel.2262@gmail.com)
 
 ---
 
