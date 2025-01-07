@@ -148,12 +148,6 @@ Feel free to fork this repository, contribute with issues or pull requests. Any 
 
 ---
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 📧 Contact
 
 If you have any questions or would like to discuss this project further, feel free to reach out:
