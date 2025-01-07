@@ -25,6 +25,8 @@ public class PIM_Page extends BasePage {
     By employeeList = By.xpath("//nav[@aria-label=\"Topbar Menu\"] //*[contains(text(),'Employee List') ]");
     By save_button = By.xpath("//button[contains(.,'Save')]");
     By search_button = By.xpath("//button[contains(@type,'submit')]");
+    By Trash_button = By.xpath("//i[@class=\"oxd-icon bi-trash\"]");
+    By conf_delete = By.xpath("//button[contains(.,' Yes, Delete ')]");
     By firstName = By.xpath("//input[@name=\"firstName\"]");
     By middleName = By.xpath("//input[@name=\"middleName\"]");
     By lastName = By.xpath("//input[@name=\"lastName\"]");
@@ -47,7 +49,7 @@ public class PIM_Page extends BasePage {
     By new_York_Sales_Office = By.xpath("//*[contains(text(), 'New York Sales Office')]");
     By jobTitleAfterChange =By.xpath("//div[@class=\"oxd-table-row oxd-table-row--with-border oxd-table-row--clickable\"] //*[contains(text(),'Automaton Tester')]");
 
-
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
     //todo:Dynamic xpath
     By dynamicLocation = By.xpath("//*[contains(text(), '"+
            AdminPage.LocationStorage +
@@ -124,6 +126,14 @@ public class PIM_Page extends BasePage {
         driver.findElement(dynamicLocation).click();
         Thread.sleep(1500);
         driver.findElement(save_button).click();
+    }
+    public void DeleteEmployee() throws InterruptedException {
+        driver.findElement(employeeName).sendKeys(StorageUsername);
+        wait.until(ExpectedConditions.elementToBeClickable(search_button)).click();
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(Trash_button)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(conf_delete)).click();
+        Thread.sleep(1200);
     }
 
 

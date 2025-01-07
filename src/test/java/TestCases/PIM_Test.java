@@ -75,10 +75,8 @@ public class PIM_Test extends BaseTest {
         DashboardPage dashboardPage= new DashboardPage(driver);
         dashboardPage.gotoPIMPage();
         PIM_Page pimPage =new PIM_Page(driver);
-        pimPage.goToEmployeeList_tab();
-        AdminPage adminPage = new AdminPage(driver);
-         adminPage
-                 .DeleteUserOrEmployee();
+        pimPage.goToEmployeeList_tab()
+                .DeleteEmployee();
     }
 
 }

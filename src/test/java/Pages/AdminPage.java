@@ -116,14 +116,13 @@ public class AdminPage extends BasePage {
     }
 
 
-    public AdminPage DeleteUserOrEmployee() throws InterruptedException {
+    public void DeleteUser() throws InterruptedException {
         driver.findElement(username).sendKeys(usernameStorage);
         wait.until(ExpectedConditions.elementToBeClickable(Search_button)).click();
         Thread.sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(Trash_button)).click();
         wait.until(ExpectedConditions.elementToBeClickable(conf_delete)).click();
         Thread.sleep(1200);
-        return this;
     }
 
 

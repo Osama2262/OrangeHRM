@@ -49,8 +49,7 @@ public class AdminTest extends BaseTest {
         DashboardPage dashboardPage =new DashboardPage(driver);
         dashboardPage.gotoAdminPage();
         AdminPage adminPage= new AdminPage(driver);
-        adminPage.DeleteUserOrEmployee()
-                .verifyDelete();
+        adminPage.DeleteUser();
     }
     @Test(priority = 5)
     public void createNewJob() throws InterruptedException {
