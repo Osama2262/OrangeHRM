@@ -33,7 +33,7 @@ The goal of this project is to automate various functional tests for different p
 ## 📂 Project Structure
 
 ```plaintext
-.
+.  
 ├── src
 │   ├── main
 │   │   └── java
