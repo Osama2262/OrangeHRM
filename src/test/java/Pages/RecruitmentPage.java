@@ -250,6 +250,26 @@ public class RecruitmentPage extends BasePage {
         return this;
     }
 
+    public void DeleteTheClosedVacancy() throws InterruptedException {
+        Thread.sleep(1200);
+        driver.findElement(Vacancies_tab).click();
+        Thread.sleep(1200);
+        wait.until(ExpectedConditions.elementToBeClickable(JobTitle)).click();
+        driver.findElement(chiefExecutiveOfficer).click();
+        Thread.sleep(500);
+        wait.until(ExpectedConditions.elementToBeClickable(Vacancy)).click();
+        System.out.println(getClosedVacancy());
+        Thread.sleep(500);
+        driver.findElement(getClosedVacancy()).click();
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(Status)).click();
+        driver.findElement(Closed_value).click();
+        Thread.sleep(500);
+        wait.until(ExpectedConditions.elementToBeClickable(Search_button)).click();
+        Thread.sleep(500);
+        wait.until(ExpectedConditions.elementToBeClickable(Trash_button)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(conf_delete)).click();
+    }
 
 
 

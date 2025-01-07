@@ -170,6 +170,16 @@ public class RecruitmentTest extends BaseTest {
         recruitmentPage.closeTheVacancy()
                 .verifyClosingVacancy();
     }
+    @Test(priority = 26)
+    public void DeleteTheClosedVacancy() throws InterruptedException {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.load()
+                .login();
+        DashboardPage dashboardPage= new DashboardPage(driver);
+        dashboardPage.gotoRecruitmentPage();
+        RecruitmentPage recruitmentPage = new RecruitmentPage(driver);
+        recruitmentPage.DeleteTheClosedVacancy();
+    }
 
 
 
