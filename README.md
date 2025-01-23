@@ -25,7 +25,6 @@ The goal of this project is to automate various functional tests for different p
 - **JavaFaker** for test data generation
 - **Allure Report** for generating detailed test reports
 - **Screenshots** for debugging and error identification
-- **CI/CD Integration** using **GitHub Actions** for automated build and test execution
 - **Maven** for build and dependency management
 
 ---
@@ -126,12 +125,6 @@ The goal of this project is to automate various functional tests for different p
    ```bash
    mvn allure:serve
    ```
-
----
-
-## 🧑‍💻 Continuous Integration / Continuous Deployment (CI/CD)
-
-The project is integrated with **GitHub Actions** for automated testing. Every time a change is pushed to the repository, the tests will automatically run and provide feedback on the success or failure of the tests.
 
 ---
 
